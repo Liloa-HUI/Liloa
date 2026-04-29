@@ -53,7 +53,7 @@
     .nav-brand {
       font-family: var(--font-serif);
       font-size: clamp(1.25rem, 2.5vw, 1.6rem);
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
@@ -348,9 +348,62 @@
       letter-spacing: 0.04em;
     }
 
-    .card-grid {
+    /* Category row */
+    .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .category-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+    }
+
+    .category-img {
+      background: var(--black);
+      aspect-ratio: 4/3;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-img-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover .category-img-inner { transform: scale(1.03); }
+
+    .category-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Product row */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
 
@@ -608,6 +661,8 @@
       #editorial { grid-template-columns: 1fr; }
       .editorial-image { min-height: 300px; }
       .footer-top { grid-template-columns: 1fr 1fr; }
+      .category-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
@@ -659,15 +714,15 @@
 
   <section id="hero">
     <div class="hero-text">
-      <p class="hero-eyebrow">New Arrival — 2025</p>
+      <p class="hero-eyebrow">First Arrival — 2027</p>
       <h1 class="hero-title">
-        Crafted<br />
+        Created<br />
         with<br />
         <em>intention.</em>
       </h1>
       <p class="hero-body">
-        Edit this text to describe your brand or current collection.
-        Keep it short, confident, and true to your voice.
+        We create with intention, blending culture and design.<br />
+        Grounded in where we're from, built for where we're going.
       </p>
       <a href="#" class="btn btn-filled">Explore Now</a>
     </div>
@@ -679,12 +734,12 @@
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
       <span>New Collection</span><span class="dot">·</span>
-      <span>Free Shipping Over $150</span><span class="dot">·</span>
-      <span>Sustainably Made</span><span class="dot">·</span>
+      <span>Liloa</span><span class="dot">·</span>
+      <span>Hawaiian Creators</span><span class="dot">·</span>
       <span>Limited Quantities</span><span class="dot">·</span>
       <span>New Collection</span><span class="dot">·</span>
-      <span>Free Shipping Over $150</span><span class="dot">·</span>
-      <span>Sustainably Made</span><span class="dot">·</span>
+      <span>Liloa</span><span class="dot">·</span>
+      <span>Hawaiian Creators</span><span class="dot">·</span>
       <span>Limited Quantities</span><span class="dot">·</span>
     </div>
   </div>
@@ -694,29 +749,47 @@
       <h2 class="section-title">Featured</h2>
       <a href="#" class="btn">View All</a>
     </div>
-    <div class="card-grid">
+
+    <!-- Category Row -->
+    <div class="category-grid">
+      <a class="category-card" href="#">
+        <div class="category-img">
+          <div class="category-img-inner">Apparel</div>
+        </div>
+        <p class="category-name">Apparel</p>
+      </a>
+      <a class="category-card" href="#">
+        <div class="category-img">
+          <div class="category-img-inner">Culture</div>
+        </div>
+        <p class="category-name">Culture</p>
+      </a>
+      <a class="category-card" href="#">
+        <div class="category-img">
+          <div class="category-img-inner">Accessories</div>
+        </div>
+        <p class="category-name">Accessories</p>
+      </a>
+    </div>
+
+    <!-- Product Row -->
+    <div class="product-grid">
       <a class="card" href="#">
         <div class="card-img"><div class="card-img-inner">Image</div></div>
-        <p class="card-label">Category</p>
-        <p class="card-name">Product Name One</p>
+        <p class="card-label">Apparel</p>
+        <p class="card-name">Product Name</p>
         <p class="card-price">$000</p>
       </a>
       <a class="card" href="#">
         <div class="card-img"><div class="card-img-inner">Image</div></div>
-        <p class="card-label">Category</p>
-        <p class="card-name">Product Name Two</p>
+        <p class="card-label">Culture</p>
+        <p class="card-name">Product Name</p>
         <p class="card-price">$000</p>
       </a>
       <a class="card" href="#">
         <div class="card-img"><div class="card-img-inner">Image</div></div>
-        <p class="card-label">Category</p>
-        <p class="card-name">Product Name Three</p>
-        <p class="card-price">$000</p>
-      </a>
-      <a class="card" href="#">
-        <div class="card-img"><div class="card-img-inner">Image</div></div>
-        <p class="card-label">Category</p>
-        <p class="card-name">Product Name Four</p>
+        <p class="card-label">Accessories</p>
+        <p class="card-name">Product Name</p>
         <p class="card-price">$000</p>
       </a>
     </div>
@@ -774,7 +847,7 @@
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">Contact</a href="#"></li>
           <li><a href="#">Shipping</a></li>
           <li><a href="#">Returns</a></li>
           <li><a href="#">FAQ</a></li>
